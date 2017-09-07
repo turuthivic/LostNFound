@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: one
+  found_by: one
+  owner: one
+
+two:
+  name: MyString
+  category: two
+  found_by: two
+  owner: two
