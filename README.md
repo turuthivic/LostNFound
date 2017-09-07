@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# LostNFound
+Post lost items to be found by the losing client 
+>>>>>>> 17b0d6c4cc06f0087a5d1d8e11f9f3f5c1c2e42b
