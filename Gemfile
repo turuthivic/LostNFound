@@ -34,6 +34,7 @@ gem 'turbolinks', '~> 5'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'paperclip'
+gem 'simple_form'
 
 
 # Use Capistrano for deployment
