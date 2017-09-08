@@ -1,0 +1,59 @@
+<div class="banner">
+<div class="container">
+<div class="banner-bottom">
+	<div class="banner-bottom-left">
+		<h2>Lost<br>&<br>Found</h2>
+	</div>
+	<div class="banner-bottom-right">
+		<div  class="callbacks_container">
+					<ul class="rslides" id="slider4">
+					<li>
+								<div class="banner-info">
+									<h3>Track lost items</h3>
+									<p>Worried you've lost anything?...</p>
+								</div>
+							</li>
+							<li>
+								<div class="banner-info">
+								   <h3>Get started</h3>
+									<p>Login to find your lost item now...</p>
+								</div>
+							</li>
+							<li>
+								<div class="banner-info">
+								  <h3>Found a misplaced item? ...</h3>
+									<p>Advertise it here ...</p>
+								</div>								
+							</li>
+						</ul>
+					</div>
+					<!--banner-->
+	  			<script src="js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager:true,
+			        nav:false,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+	</div>
+	<div class="clearfix"> </div>
+</div>
+	<div class="shop">
+		<%= link_to "GET STARTED", new_user_registration_path %> 
+	</div>
+	</div>
+		</div>

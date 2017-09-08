@@ -4,13 +4,14 @@
     <title>Lostnfound</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', 'style', 'flexslider', 'component', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'simpleCart.min', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <%= render partial: 'pages/navbar' %>
   <div class="container">
     <%= yield %>
   </div>
-  </body>
+  </body> 
 </html>

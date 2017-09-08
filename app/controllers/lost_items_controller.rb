@@ -11,23 +11,23 @@ class LostItemsController < ApplicationController
 
 
   def show
-    @item = Item.where(@category_id)
+    @item = LostItem.where(@category_id)
   end
 
  
   def new
-    @item = Item.new
-    @categories = Category.all.map { |c| [c.name, c.id]}
+    @item = LostItem.new
+    @categories = Category.all.map { |c| [c.id, c.name]}
   end
 
  
   def edit
-    @categories = Category.all.map { |c| [c.name,c.id]}
+    @categories = Category.all.map { |c| [c.id,c.name]}
   end
 
  
   def create
-    @item = Item.new(item_params)
+    @item = LostItem.new(item_params)
     @item.category_id = params[:category_id]
     
     respond_to do |format|
@@ -65,11 +65,11 @@ class LostItemsController < ApplicationController
 
   private
     def set_item
-      @item = Item.find(params[:id])
+      @item = LostItem.find(params[:id])
     end
 
     def item_params
-      params.require(:item).permit(:title, :description, :category_id, :price, :image)
+      params.require(:lost_item).permit(:title, :description, :category_id, :price, :image)
     end
 
     def set_category
