@@ -1,0 +1,39 @@
+<div class="banner">
+<div class="container">
+<div class="banner-bottom">
+	<div class="banner-bottom-left">
+		<h2>Lost<br>&<br>Found</h2>
+	</div>
+	<div class="banner-bottom-right">
+		<div  class="callbacks_container">
+					<ul class="rslides" id="slider4">
+					<li>
+								<div class="banner-info">
+									<h3>Track lost items</h3>
+									<p>Worried you've lost anything...?</p>
+									<p>
+									<% if user_signed_in? %>
+										<%= link_to "FIND", lost_items_path, :class => "btn btn-primary" %> your lost item now...
+									<% else %>
+										<%= link_to "LOGIN", new_user_session_path, :class => "btn btn-primary" %> | 
+										<%= link_to "SIGN UP", new_user_registration_path, :class => "btn btn-primary" %> to find your lost item now...</p>
+									<% end %>
+								</div>
+							</li>
+							<li>
+								<div class="banner-info">
+								  <h3>Found a misplaced item ...? </h3>
+									<p>Advertise it here ...</p>
+								</div>								
+							</li>
+						</ul>
+					</div>
+					<!--banner-->			   
+	</div>
+	<div class="clearfix"> </div>
+</div>
+	<div class="shop">
+		<%= link_to "GET STARTED", new_user_registration_path %> 
+	</div>
+	</div>
+		</div>
