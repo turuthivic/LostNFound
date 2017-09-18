@@ -16,6 +16,7 @@
 </div>
 
 <div class="field">
+  <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :name), :prompt => 'select category') %><br />
 </div> 
 <div class="field">
 	<%= f.submit class: "btn btn-success" %>

@@ -4,30 +4,30 @@ class LostItemsController < ApplicationController
   
   def index
     @items = LostItem.all
-    @categories = Category.where(@category_id)
   end
 
 
   def show
     @item = LostItem.where(@category_id)
+    @category = Category.where(@category_id)
   end
 
  
   def new
     @item = LostItem.new
-    @categories = Category.all.map { |c| [c.id, c.name]}
+    @category = Category.all.collect { |c| [c.name, c.id]}
   end
 
  
   def edit
-    @categories = Category.all.map { |c| [c.id,c.name]}
+    @category = Category.all.collect { |c| [c.name, c.id]}
   end
 
- 
   def create
+
     @item = LostItem.new(item_params)
+    @item.user = current_user
     @item.category_id = params[:category_id]
-    
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'LostItem was successfully created.' }
