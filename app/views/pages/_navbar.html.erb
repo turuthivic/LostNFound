@@ -4,7 +4,11 @@
 			<div class="container">
 				<div class="header-top-left">
 					<ul>
+						<% if !user_signed_in? %>
 						<li><%= link_to "Login", new_user_session_path %><span class="glyphicon glyphicon-user"> </span></li>
+						<% else %>
+						<li><%= link_to "Logout", destroy_user_session_path %><span class="glyphicon glyphicon-user"> </span></li>
+						<% end %>
 						<li><%= link_to "Register", new_user_registration_path %> <span class="glyphicon glyphicon-lock"> </span></li>			
 					</ul>
 				</div>
@@ -32,8 +36,8 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
 			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "About", pages_contact_path %></li>
-			<li><%= link_to "About", pages_contact_path %></li>
+			<li><%= link_to "About", pages_about_path %></li>
+			<li><%= link_to "contact", pages_contact_path %></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->

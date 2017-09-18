@@ -10,45 +10,25 @@
 					<li>
 								<div class="banner-info">
 									<h3>Track lost items</h3>
-									<p>Worried you've lost anything?...</p>
+									<p>Worried you've lost anything...?</p>
+									<p>
+									<% if user_signed_in? %>
+										<%= link_to "FIND", lost_items_path, :class => "btn btn-primary" %> your lost item now...
+									<% else %>
+										<%= link_to "LOGIN", new_user_session_path, :class => "btn btn-primary" %> | 
+										<%= link_to "SIGN UP", new_user_registration_path, :class => "btn btn-primary" %> to find your lost item now...</p>
+									<% end %>
 								</div>
 							</li>
 							<li>
 								<div class="banner-info">
-								   <h3>Get started</h3>
-									<p>Login to find your lost item now...</p>
-								</div>
-							</li>
-							<li>
-								<div class="banner-info">
-								  <h3>Found a misplaced item? ...</h3>
+								  <h3>Found a misplaced item ...? </h3>
 									<p>Advertise it here ...</p>
 								</div>								
 							</li>
 						</ul>
 					</div>
-					<!--banner-->
-	  			<script src="js/responsiveslides.min.js"></script>
-			 <script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager:true,
-			        nav:false,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
+					<!--banner-->			   
 	</div>
 	<div class="clearfix"> </div>
 </div>
