@@ -8,8 +8,6 @@ class LostItemsController < ApplicationController
 
 
   def show
-    @item = LostItem.where(@category_id)
-    @category = Category.where(@category_id)
   end
 
  
@@ -20,13 +18,14 @@ class LostItemsController < ApplicationController
 
  
   def edit
+
     @category = Category.all.collect { |c| [c.name, c.id]}
   end
 
   def create
 
-    @item = LostItem.new(item_params)
-    @item.user = current_user
+    @item = current_user.lost_items.build(item_params)
+    @item.user_id = current_user.id
     @item.category_id = params[:category_id]
     respond_to do |format|
       if @item.save
@@ -63,11 +62,11 @@ class LostItemsController < ApplicationController
 
   private
     def set_item
-      @item = LostItem.find(params[:id])
+      @item = current_user.lost_items.find(params[:id])
     end
 
     def item_params
-      params.require(:lost_item).permit(:title, :description, :category_id, :price, :image)
+      params.require(:lost_item).permit(:name, :category_id)
     end
 
     def set_category

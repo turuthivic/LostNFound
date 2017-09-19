@@ -749,6 +749,13 @@ ul.f_nav li a{
 	color:#816263;
 }
 /*-- footer-ends-here --*/
+
+/*show page*/
+.show{
+	padding: 20px 100px;
+}
+/*show page ends*/
+
 /*-- products-page-starts-here --*/
 .products{
 	width:20%;
