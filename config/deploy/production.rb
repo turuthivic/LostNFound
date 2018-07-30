@@ -52,8 +52,7 @@ server "139.59.0.44", user: "cybernox", roles: %w{app db web}
 # server "example.com",
 #   user: "user_name",
 #   roles: %w{web app},
-#   ssh_options: {
-#     user: "user_name", # overrides user setting above
+#   ssh_options:      user: "user_name", # overrides user setting above
 #     keys: %w(/home/user_name/.ssh/id_rsa),
 #     forward_agent: false,
 #     auth_methods: %w(publickey password)
